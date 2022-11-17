@@ -17,7 +17,10 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // route
-app.get('/',(req,res)=>{
+app.use("/api/pizzas", require("./routes/pizzaRoute"));
+app.use("/api/users",require("./routes/userRoutes"));
+app.use("/api/orders",require("./routes/orderRoute"));
+app.get("/",(req,res)=>{
     res.send('<h1>Hello from node server by nodemon</h1>');
 })
 

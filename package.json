@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon server.js",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently\"npm run server\"\"npm run client\"",
     "data:import": "node seeder.js"
   },
   "keywords": [],
@@ -18,6 +20,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.7.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "stripe": "^11.0.0",
+    "uuid": "^9.0.0"
   }
 }

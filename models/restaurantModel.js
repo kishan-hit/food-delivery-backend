@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const pizzaSchema = mongoose.Schema({
+const restaurantSchema = mongoose.Schema({
     name:{
         type: String,
         required: true
     },
-    varients: [],
-    prices: [],
+    items: [],
     category: {
         type: String,
         required: true
@@ -17,9 +16,17 @@ const pizzaSchema = mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    address : {
+        type : String,
+        required : true
+    },
+    number : {
+        type : Number,
+        required : true
     }
 },{timestamps:true}
 );
 
-const pizzaModel = mongoose.model('pizza',pizzaSchema);
-module.exports = pizzaModel;
+const restaurantModel = mongoose.model('restaurant',restaurantSchema);
+module.exports = restaurantModel;
